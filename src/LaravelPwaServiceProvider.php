@@ -17,7 +17,7 @@ class LaravelPwaServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-pwa');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-pwa');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -32,7 +32,7 @@ class LaravelPwaServiceProvider extends ServiceProvider
             // Publishing assets.
             /*$this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor/laravel-pwa'),
-            ], 'assets');*/
+            ], 'assets');
 
             // Publishing the translation files.
             /*$this->publishes([
