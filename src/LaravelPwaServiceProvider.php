@@ -15,7 +15,7 @@ class LaravelPwaServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-pwa');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-pwa');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-pwa');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
@@ -30,9 +30,9 @@ class LaravelPwaServiceProvider extends ServiceProvider
             ], 'views');*/
 
             // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-pwa'),
-            ], 'assets');
+            $this->publishes([
+                __DIR__.'/../resources/assets/icons' => public_path('vendor/laravel-pwa/icons'),
+            ], 'pwa-icons');
 
             // Publishing the translation files.
             /*$this->publishes([

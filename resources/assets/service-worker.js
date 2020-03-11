@@ -1,4 +1,4 @@
-var cacheName = 'hello-pwa-v1';
+var cacheName = 'laravel-pwa-v1';
 var filesToCache = [
     '/',
     '/css/style.css'
