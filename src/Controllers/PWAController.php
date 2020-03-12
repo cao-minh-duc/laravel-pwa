@@ -13,8 +13,17 @@ class PWAController extends Controller
 
     public function serviceWorker()
     {
-      return response()->file(__DIR__.'/../../resources/assets/service-worker.js',[
-        'Content-Type' => 'application/javascript'
+
+      $content = view('laravel-pwa::service-worker',[
+        'version' => config('laravel-pwa.version'),
+        'filesToCache' => implode(
+          ',',
+          array_map(function($file){
+            return "'$file'";
+          },config('laravel-pwa.files-to-cache'))
+        )
       ]);
+      return response($content)->
+        header('Content-Type','application/javascript');
     }
 }

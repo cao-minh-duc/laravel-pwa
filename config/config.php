@@ -4,6 +4,7 @@
  * You can place your custom package configuration in here.
  */
 return [
+    'version' => '0.1.0',
     'manifest' => [
         "name" => "Cao Minh Duc",
         "short_name" => "Cao",
@@ -56,5 +57,9 @@ return [
           ]
         ],
         "splash_pages" => null
+    ],
+    'files-to-cache' => [
+        '/',
+        'css/app.css'
     ]
 ];
